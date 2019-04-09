@@ -1,0 +1,46 @@
+#p1Name {
+    position: fixed;
+    bottom: 6.15in;
+}
+
+#p1Score {
+    position: fixed;
+    bottom: 6in;
+    right: 8in;
+}
+
+#p2Name {
+    position: fixed;
+    bottom: 4.15in;
+}
+
+#p2Score{
+    position: fixed;
+    bottom: 4in;
+    right: 8in;
+}
+
+#deal {
+    position: fixed;
+    width: 1in;
+    bottom: 1in;
+    right: 7in;
+}
+
+#stand {
+    position: fixed;
+    bottom: 1in;
+    right: 5in;
+}
+
+#take {
+    position: fixed;
+    bottom: 1in;
+    right: 3.71in;
+}
+
+#fold {
+    position: fixed;
+    bottom: 1in;
+    right: 3in;
+}
