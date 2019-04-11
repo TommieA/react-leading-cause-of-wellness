@@ -1,15 +1,12 @@
 
 let cards = [];
-let suits = ['c', 'd', 'h', 's'];
-let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+let suits = [' Clubs', ' Diamonds', ' Hearts', ' Spades'];
+let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
 
 let p1Hand = []; p1Score = 0;
 let p2Hand = []; p2Score = 0;
 
-
 shuffle();
-
-
 
 function compare(){
     $('#message').text(`Something`); 
@@ -50,7 +47,7 @@ function shuffle (){
 };
 
 function deal(){
-    if(cards.length <= 16) {
+    if(cards.length <= 18) {
         shuffle();
     };
     for(let i = 0; i < 5; i++){
@@ -60,9 +57,9 @@ function deal(){
     p1Name = $('#inputP1Name').val();
     p2Name = $('#inputP2Name').val();
 
-    console.log(cards);
-    console.log(p1Hand);
-    console.log(p2Hand);
+    // console.log(cards);
+    // console.log(p1Hand);
+    // console.log(p2Hand);
 
     $('#p1Card1').text(`${p1Hand[0]}`);
     $('#p1Card2').text(`${p1Hand[1]}`);
@@ -84,6 +81,7 @@ $('#deal').on('click', deal);
 $('#p1Stand').on('click', p1Stand);
 $('#p1Draw').on('click', p1Draw);
 $('#p1Fold').on('click', p1Fold);
+
 $('#p2Stand').on('click', p2Stand);
 $('#p2Draw').on('click', p2Draw);
 $('#p2Fold').on('click', p2Fold);
