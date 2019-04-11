@@ -7,19 +7,40 @@
 
     <body>
             <form>
-                <input type="text" placeholder="Name Player 1" id="p1Name"> 
-                <input type="text" placeholder="Name Player 2" id="p2Name">
+                <input type="text" placeholder="Name Player 1" id="inputP1Name"> 
+                <input type="text" placeholder="Name Player 2" id="inputP2Name">
             </form>
 
             <p id=p1Score>0</p>
             <p id=p2Score>0</p>
+
+            <div id="showP1Cards"></div>
+                <div id="p1Card1">1</div>
+                <div id="p1Card2">2</div>
+                <div id="p1Card3">3</div>
+                <div id="p1Card4">4</div>
+                <div id="p1Card5">5</div>
+            </div>
+            
+            <div id="showP2Cards">
+                <div id="p2Card1">1</div>
+                <div id="p2Card2">2</div>
+                <div id="p2Card3">3</div>
+                <div id="p2Card4">4</div>
+                <div id="p2Card5">5</div>
+            </div>
+
+            <div id=message></div>
+
+            <button id="deal">Deal</button>
+                
+            <button id="p1Stand">Stand</button>
+            <button id="p1Draw">Draw</button>
+            <button id="p1Fold">Fold</button>
+            <button id="p2Stand">Stand</button>
+            <button id="p2Draw">Draw</button>
+            <button id="p2Fold">Fold</button>
         
-            <div id="buttons">
-                <button id="deal">Deal</button>
-                <button id="stand">Stand</button>
-                <button id="take">Take Cards</button>
-                <button id="fold">fold</button>
-            </div> 
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
             <script src="js/app.js"></script> 
