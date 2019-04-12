@@ -13,18 +13,76 @@ function compare(){
     return;
 };
 
-function stand(player){
-    if(p1){p1Stand=true}else{p2Stand=true};
-    return;
+function p1Card1Btn(){
+    p1Hand[0] = cards.shift();
+    $('#p1Card1').text(`${p1Hand[0]}`);
+    $('#p1Card1Btn').css('opacity', 0);
 };
 
-function draw(){
+function p1Card2Btn(){
+    p1Hand[1] = cards.shift();
+    $('#p1Card2').text(`${p1Hand[1]}`);
+    $('#p1Card2Btn').css('opacity', 0);
+};
 
-}
+function p1Card3Btn(){
+    p1Hand[2] = cards.shift();
+    $('#p1Card3').text(`${p1Hand[2]}`);
+    $('#p1Card3Btn').css('opacity', 0);
+};
 
-function fold(){
-    if(p1){p1Fold=true}else{p2Fold=true};
-    return;
+function p1Card4Btn(){
+    p1Hand[3] = cards.shift();
+    $('#p1Card4').text(`${p1Hand[3]}`);
+    $('#p1Card4Btn').css('opacity', 0);
+};
+
+function p1Card5Btn(){
+    p1Hand[4] = cards.shift();
+    $('#p1Card5').text(`${p1Hand[4]}`);
+    $('#p1Card5Btn').css('opacity', 0);
+};
+
+function p1Fold(){
+    p2Score++;
+    $('#p2Score').text(`${p2Score}`);
+    deal();
+};
+
+function p2Card1Btn(){
+    p2Hand[0] = cards.shift();
+    $('#p2Card1').text(`${p2Hand[0]}`);
+    $('#p2Card1Btn').css('opacity', 0);
+};
+
+function p2Card2Btn(){
+    p2Hand[1] = cards.shift();
+    $('#p2Card2').text(`${p2Hand[1]}`);
+    $('#p2Card2Btn').css('opacity', 0);
+};
+
+function p2Card3Btn(){
+    p2Hand[2] = cards.shift();
+    $('#p2Card3').text(`${p2Hand[2]}`);
+    $('#p2Card3Btn').css('opacity', 0);
+};
+
+function p2Card4Btn(){
+    p2Hand[3] = cards.shift();
+    $('#p2Card4').text(`${p2Hand[3]}`);
+    $('#p2Card4Btn').css('opacity', 0);
+};
+
+function p2Card5Btn(){
+    p2Hand[4] = cards.shift();
+    $('#p2Card5').text(`${p2Hand[4]}`);
+    $('#p2Card5Btn').css('opacity', 0);
+};
+
+function p2Fold(){
+    p1Score++;
+    $('#p1Score').text(`${p1Score}`);
+    deal();
 };
 
 function shuffle (){
@@ -57,9 +115,9 @@ function deal(){
     p1Name = $('#inputP1Name').val();
     p2Name = $('#inputP2Name').val();
 
-    // console.log(cards);
-    // console.log(p1Hand);
-    // console.log(p2Hand);
+    console.log(cards);
+    console.log(p1Hand);
+    console.log(p2Hand);
 
     $('#p1Card1').text(`${p1Hand[0]}`);
     $('#p1Card2').text(`${p1Hand[1]}`);
@@ -77,11 +135,19 @@ function deal(){
 
 $('#deal').on('click', deal);
 
-
-$('#p1Stand').on('click', p1Stand);
-$('#p1Draw').on('click', p1Draw);
 $('#p1Fold').on('click', p1Fold);
 
 $('#p2Stand').on('click', p2Stand);
-$('#p2Draw').on('click', p2Draw);
 $('#p2Fold').on('click', p2Fold);
+
+$('#p1Card1Btn').on('click', p1Card1Btn);
+$('#p1Card2Btn').on('click', p1Card2Btn);
+$('#p1Card3Btn').on('click', p1Card3Btn);
+$('#p1Card4Btn').on('click', p1Card4Btn);
+$('#p1Card5Btn').on('click', p1Card5Btn);
+
+$('#p2Card1Btn').on('click', p2Card1Btn);
+$('#p2Card2Btn').on('click', p2Card2Btn);
+$('#p2Card3Btn').on('click', p2Card3Btn);
+$('#p2Card4Btn').on('click', p2Card4Btn);
+$('#p2Card5Btn').on('click', p2Card5Btn);

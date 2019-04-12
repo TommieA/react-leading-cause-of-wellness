@@ -45,8 +45,15 @@
     border-style: solid;
     border-color: black;
     background-color: aqua;
-    text-align: center;
-     
+    text-align: center;   
+}
+
+#p1Card1Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 6in;
+    bottom: 4.28in;
 }
 
 #p1Card2 {
@@ -61,6 +68,14 @@
     text-align: center;
 }
 
+#p1Card2Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 4.68in;
+    bottom: 4.28in;
+}
+
 #p1Card3 {
     position: fixed;
     height: 2.25in;
@@ -71,6 +86,14 @@
     border-color: black;
     background-color: aqua;
     text-align: center;
+}
+
+#p1Card3Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 3.37in;
+    bottom: 4.28in;
 }
 
 #p1Card4 {
@@ -85,6 +108,14 @@
     text-align: center;
 }
 
+#p1Card4Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 2.048in;
+    bottom: 4.28in;
+}
+
 #p1Card5 {
     position: fixed;
     height: 2.25in;
@@ -97,25 +128,19 @@
     text-align: center;
 }
 
-
-#p1Stand {
+#p1Card5Btn {
     position: fixed;
-    bottom: 4in;
-    right: 4.5in;
-}
-
-#p1Draw {
-    position: fixed;
-    bottom: 4in;
-    right: 3.71in;
+    height: .17in;
+    width: 1.25in;
+    right: .73in;
+    bottom: 4.28in;
 }
 
 #p1Fold {
     position: fixed;
     bottom: 4in;
-    right: 3in;
+    right: 3.77in;
 }
-
 
 #p2Card1 {
     position: fixed;
@@ -127,6 +152,14 @@
     border-color: black;
     background-color: pink;
     text-align: center;
+}
+
+#p2Card1Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 6in;
+    bottom: 1.28in;
 }
 
 #p2Card2 {
@@ -141,6 +174,14 @@
     text-align: center;
 }
 
+#p2Card2Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 4.68in;
+    bottom: 1.28in;
+}
+
 #p2Card3 {
     position: fixed;
     height: 2.25in;
@@ -151,6 +192,14 @@
     border-color: black;
     background-color: pink;
     text-align: center;
+}
+
+#p2Card3Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 3.37in;
+    bottom: 1.28in;
 }
 
 #p2Card4 {
@@ -165,6 +214,14 @@
     text-align: center;
 }
 
+#p2Card4Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 2.046in;
+    bottom: 1.28in;
+}
+
 #p2Card5 {
     position: fixed;
     height: 2.25in;
@@ -177,16 +234,18 @@
     text-align: center;
 }
 
+#p2Card5Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    right: 0.73in;
+    bottom: 1.28in;
+}
+
 #p2Stand {
     position: fixed;
     bottom: 1in;
     right: 4.5in;
-}
-
-#p2Draw {
-    position: fixed;
-    bottom: 1in;
-    right: 3.71in;
 }
 
 #p2Fold {
