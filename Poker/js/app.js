@@ -5,6 +5,7 @@ let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'Kin
 
 let p1Hand = []; p1Score = 0;
 let p2Hand = []; p2Score = 0;
+let y      = 0;  let z   = 0;
 
 shuffle();
 
@@ -13,75 +14,15 @@ function compare(){
     return;
 };
 
-function p1Card1Btn(){
-    p1Hand[0] = cards.shift();
-    $('#p1Card1').text(`${p1Hand[0]}`);
-    $('#p1Card1Btn').css('opacity', 0);
-};
-
-function p1Card2Btn(){
-    p1Hand[1] = cards.shift();
-    $('#p1Card2').text(`${p1Hand[1]}`);
-    $('#p1Card2Btn').css('opacity', 0);
-};
-
-function p1Card3Btn(){
-    p1Hand[2] = cards.shift();
-    $('#p1Card3').text(`${p1Hand[2]}`);
-    $('#p1Card3Btn').css('opacity', 0);
-};
-
-function p1Card4Btn(){
-    p1Hand[3] = cards.shift();
-    $('#p1Card4').text(`${p1Hand[3]}`);
-    $('#p1Card4Btn').css('opacity', 0);
-};
-
-function p1Card5Btn(){
-    p1Hand[4] = cards.shift();
-    $('#p1Card5').text(`${p1Hand[4]}`);
-    $('#p1Card5Btn').css('opacity', 0);
-};
-
-function p1Fold(){
-    p2Score++;
-    $('#p2Score').text(`${p2Score}`);
+function p1Win(){
+    p1Score++;
+    $('#p1Score').text(`${p1Score}`);
     deal();
 };
 
-function p2Card1Btn(){
-    p2Hand[0] = cards.shift();
-    $('#p2Card1').text(`${p2Hand[0]}`);
-    $('#p2Card1Btn').css('opacity', 0);
-};
-
-function p2Card2Btn(){
-    p2Hand[1] = cards.shift();
-    $('#p2Card2').text(`${p2Hand[1]}`);
-    $('#p2Card2Btn').css('opacity', 0);
-};
-
-function p2Card3Btn(){
-    p2Hand[2] = cards.shift();
-    $('#p2Card3').text(`${p2Hand[2]}`);
-    $('#p2Card3Btn').css('opacity', 0);
-};
-
-function p2Card4Btn(){
-    p2Hand[3] = cards.shift();
-    $('#p2Card4').text(`${p2Hand[3]}`);
-    $('#p2Card4Btn').css('opacity', 0);
-};
-
-function p2Card5Btn(){
-    p2Hand[4] = cards.shift();
-    $('#p2Card5').text(`${p2Hand[4]}`);
-    $('#p2Card5Btn').css('opacity', 0);
-};
-
-function p2Fold(){
-    p1Score++;
-    $('#p1Score').text(`${p1Score}`);
+function p2Win(){
+    p2Score++;
+    $('#p2Score').text(`${p2Score}`);
     deal();
 };
 
@@ -105,7 +46,8 @@ function shuffle (){
 };
 
 function deal(){
-    if(cards.length <= 18) {
+    $('#message').text('');
+    if(cards.length <= 16) {
         shuffle();
     };
     for(let i = 0; i < 5; i++){
@@ -115,39 +57,65 @@ function deal(){
     p1Name = $('#inputP1Name').val();
     p2Name = $('#inputP2Name').val();
 
-    console.log(cards);
-    console.log(p1Hand);
-    console.log(p2Hand);
+    // console.log(cards);
+    // console.log(p1Hand);
+    // console.log(p2Hand);
 
-    $('#p1Card1').text(`${p1Hand[0]}`);
-    $('#p1Card2').text(`${p1Hand[1]}`);
-    $('#p1Card3').text(`${p1Hand[2]}`);
-    $('#p1Card4').text(`${p1Hand[3]}`);
-    $('#p1Card5').text(`${p1Hand[4]}`);
+    for(let i = 0; i < 5; i++){
+        $('#p1Card' + i).text(`${p1Hand[i]}`);
+    };
 
-    $('#p2Card1').text(`${p2Hand[0]}`);
-    $('#p2Card2').text(`${p2Hand[1]}`);
-    $('#p2Card3').text(`${p2Hand[2]}`);
-    $('#p2Card4').text(`${p2Hand[3]}`);
-    $('#p2Card5').text(`${p2Hand[4]}`);
- 
+    for(let i = 0; i < 5; i++){
+        $('#p2Card' + i).text(`${p2Hand[i]}`);
+    };
+};
+
+function draw(){
+    $('#message').text('');
+    y = 0; z = 0;
+    for(let i = 0; i < 5; i++){
+        if(p1Hand[i] === 'discard'){
+            p1Hand[i] = cards.shift();
+            $('#p1Card' + i).css('opacity', 1);
+            $('#p1Card' + i).text(`${p1Hand[i]}`);
+        };
+    };
+
+    for(let i = 0; i < 5; i++){
+        if(p2Hand[i] === 'discard'){
+            p2Hand[i] = cards.shift();
+            $('#p2Card' + i).css('opacity', 1);
+            $('#p2Card' + i).text(`${p2Hand[i]}`);
+        };
+    };
+};
+
+for(let i = 0; i < 5; i++){
+    $('#p1Card' + i).on('click', () => {
+        y++;
+        if(y > 3){
+            $('#message').text(p1Name  + ' can only discard 3 cards')
+        }else{
+        $('#p1Card' + i).css('opacity',0);
+        p1Hand[i] = 'discard';
+        };
+    });
+};
+
+for(let i = 0; i < 5; i++){
+    $('#p2Card' + i).on('click', () => {
+        z++;
+        if(z > 3){
+            $('#message').text(p2Name + ' can only discard 3 cards')
+        }else{
+        $('#p2Card' + i).css('opacity',0);
+        p2Hand[i] = 'discard';
+        };
+    });
 };
 
 $('#deal').on('click', deal);
+$('#draw').on('click', draw);
 
-$('#p1Fold').on('click', p1Fold);
-
-$('#p2Stand').on('click', p2Stand);
-$('#p2Fold').on('click', p2Fold);
-
-$('#p1Card1Btn').on('click', p1Card1Btn);
-$('#p1Card2Btn').on('click', p1Card2Btn);
-$('#p1Card3Btn').on('click', p1Card3Btn);
-$('#p1Card4Btn').on('click', p1Card4Btn);
-$('#p1Card5Btn').on('click', p1Card5Btn);
-
-$('#p2Card1Btn').on('click', p2Card1Btn);
-$('#p2Card2Btn').on('click', p2Card2Btn);
-$('#p2Card3Btn').on('click', p2Card3Btn);
-$('#p2Card4Btn').on('click', p2Card4Btn);
-$('#p2Card5Btn').on('click', p2Card5Btn);
+$('#p1Win').on('click', p1Win);
+$('#p2Win').on('click', p2Win);
