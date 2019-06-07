@@ -27,18 +27,20 @@ class CreateBlog extends Component{
         })
 
         this.props.submitBlog(this.state)
+
+        
     }
 
     render(){
         return(
             <div>
-            <h1>Creating Blog</h1>
+            <h1>Create Blog</h1>
             <form onSubmit={this.handleSubmit}>
-                <input name="email" type="text" onChange={this.handleChange}></input>
+                email: <input name="email" type="text" className="head" onChange={this.handleChange}></input>
                 <br></br>
-                <input name="title" type="text" onChange={this.handleChange}></input>
+                Title: <input name="title" type="text" className="head" onChange={this.handleChange}></input>
                 <br></br>
-                <textarea name="blog" type="text" onChange={this.handleChange}></textarea>
+                Blog: <textarea name="blog" type="text" id="blog" onChange={this.handleChange}></textarea>
                 <br></br>
                 <br></br>
                 <button type="submit">Submit</button>
