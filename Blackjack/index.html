@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html>
+    <head>  
+        <title>Blackjack</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="https://fonts.googleapis.com/css?family=Nato+Sans|Roboto+Mono&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <form>
+            <input type="text" id="inputP1Name" value="Player"> 
+        </form>
+
+        <p id=dealer>Dealer</p>
+        <p id=p1Score>0</p>
+    
+        <div id="dCards">
+            <div id="dCard0"></div>
+            <div id="dCard1"></div>
+            <div id="dCard2"></div>
+            <div id="dCard3"></div>
+            <div id="dCard4"></div>
+            <div id="dCard5"></div>
+            <div id="dCard6"></div>
+            <div id="dCard7"></div>
+            <div id="dCard8"></div>
+            <div id="dCard9"></div>
+        </div>
+
+        <div id="P1Cards">
+            <div id="p1Card0"></div>
+            <div id="p1Card1"></div>
+            <div id="p1Card2"></div>
+            <div id="p1Card3"></div>
+            <div id="p1Card4"></div>
+            <div id="p1Card5"></div>
+            <div id="p1Card6"></div>
+            <div id="p1Card7"></div>
+            <div id="p1Card8"></div>
+            <div id="p1Card9"></div>
+        </div>
+        
+        <div id="s1Cards">
+            <div id="s1Card0"></div>
+            <div id="s1Card1"></div>
+            <div id="s1Card2"></div>
+            <div id="s1Card3"></div>
+            <div id="s1Card4"></div>
+            <div id="s1Card5"></div>
+            <div id="s1Card6"></div>
+            <div id="s1Card7"></div>
+            <div id="s1Card8"></div>
+            <div id="s1Card9"></div>
+        </div>
+
+        <button id="p1Loss">Loss</button>
+        <button id="p1Win">Win</button>
+        <button id="deal">Deal</button>
+        <button id="hit">Hit</button>
+        <button id="stand">Stand</button>
+        <button id="dDown">Double Down</button>
+        <button id="split">Split</button>
+
+        <div id=message></div>
+
+            
+
+ <!--       <div class="card">
+            <div class="front">
+              <div class="ace">&diams;</div>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="front">
+                <div class="index">5<br />&clubs;</div>
+                <div class="spotA1">&clubs;</div>
+                <div class="spotA5">&clubs;</div>
+                <div class="spotB3">&clubs;</div>
+                <div class="spotC1">&clubs;</div>
+                <div class="spotC5">&clubs;</div>
+            </div>
+            
+            <div class="front red">
+                <div class="index">5<br />&diams;;</div>
+                <div class="spotA1">&diams;</div>
+                <div class="spotA5">&diams;</div>
+                <div class="spotB3">&diams;</div>
+                <div class="spotC1">&diams;</div>
+                <div class="spotC5">&diams;</div>
+            </div>
+
+            <div class="front red">
+                <div class="index">5<br />&hearts;</div>
+                <div class="spotA1">&hearts;</div>
+                <div class="spotA5">&hearts;</div>
+                <div class="spotB3">&hearts;</div>
+                <div class="spotC1">&hearts;</div>
+                <div class="spotC5">&hearts;</div>
+            </div>
+
+            <div class="front">
+                <div class="index">5<br />&spades;</div>
+                <div class="spotA1">&spades;</div>
+                <div class="spotA5">&spades;</div>
+                <div class="spotB3">&spades;</div>
+                <div class="spotC1">&spades;</div>
+                <div class="spotC5">&spades;</div>
+            </div>
+
+            <div class="front">
+                <div class="index">9<br />&clubs;</div>
+                <div class="spotA1">&clubs;</div>
+                <div class="spotA2">&clubs;</div>
+                <div class="spotA4">&clubs;</div>
+                <div class="spotA4">&clubs;</div>
+                <div class="spotA4">&clubs;</div>
+                <div class="spotA5">&clubs;</div>
+                <div class="spotB3">&clubs;</div>
+                <div class="spotC1">&clubs;</div>
+                <div class="spotC2">&clubs;</div>
+                <div class="spotC4">&clubs;</div>
+                <div class="spotC5">&clubs;</div>
+            </div>
+
+            <div class="front">
+                <div class="index">9<br />&diams;</div>
+                <div class="spotA1">&diams;</div>
+                <div class="spotA2">&diams;</div>
+                <div class="spotA4">&diams;</div>
+                <div class="spotA5">&diams;</div>
+                <div class="spotB3">&diams;</div>
+                <div class="spotC1">&diams;</div>
+                <div class="spotC2">&diams;</div>
+                <div class="spotC4">&diams;</div>
+                <div class="spotC5">&diams;</div>
+            </div>
+
+            <div class="front red">
+                <div class="index">9<br />&hearts;</div>
+                <div class="spotA1">&hearts;</div>
+                <div class="spotA2">&hearts;</div>
+                <div class="spotA4">&hearts;</div>
+                <div class="spotA5">&hearts;</div>
+                <div class="spotB3">&hearts;</div>
+                <div class="spotC1">&hearts;</div>
+                <div class="spotC2">&hearts;</div>
+                <div class="spotC4">&hearts;</div>
+                <div class="spotC5">&hearts;</div>
+            </div>
+
+            <div class="front red">
+                <div class="index">9<br />&hearts;</div>
+                <div class="spotA1">&hearts;</div>
+                <div class="spotA2">&hearts;</div>
+                <div class="spotA4">&hearts;</div>
+                <div class="spotA5">&hearts;</div>
+                <div class="spotB3">&hearts;</div>
+                <div class="spotC1">&hearts;</div>
+                <div class="spotC2">&hearts;</div>
+                <div class="spotC4">&hearts;</div>
+                <div class="spotC5">&hearts;</div>
+            </div>
+
+            
+        </div>  -->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="js/app.js"></script> 
+
+    </body>
+
+</html>
